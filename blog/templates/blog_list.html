@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>博客列表页</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="col-md-9 text-center">
+        <table class="table">
+            <caption>博客列表</caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>标题</th>
+                    <th>作者</th>
+                    <th>点击量</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for blog in blogs %}
+                <tr>
+                    <td>{{ blog.id }}</td>
+                    <td>{{ blog.title }}</td>
+                    <td>{{ blog.author.name }}</td>
+                    <td>{{ blog.counter }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
